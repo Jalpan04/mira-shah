@@ -329,19 +329,19 @@
 
   /* Count-up statistics strip */
   .stats-strip {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    align-items: center;
     background: #fdfaf2;
     border: 2px dashed rgba(42,38,34,0.3);
-    padding: 16px 20px;
-    margin-top: 24px;
+    padding: 10px 20px;
+    margin-top: 20px;
     transform: rotate(-1deg);
     box-shadow: 2px 6px 15px rgba(0,0,0,0.04);
   }
   .stat-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     text-align: left;
   }
   .stat-num {
@@ -349,6 +349,10 @@
     font-size: 32px;
     color: var(--red);
     display: inline-block;
+  }
+  .stat-circle {
+    padding: 2px 6px;
+    margin-right: 4px;
   }
   .stat-label {
     display: inline-block;
@@ -704,7 +708,7 @@
         <figcaption>the redesigned campaign, live on the streets</figcaption>
       </figure>
 
-      <div class="stats-strip" style="width: 100%; max-width: 340px; margin-bottom: 20px;">
+      <div class="stats-strip" style="margin-bottom: 20px;">
         <div class="stat-item">
           <span class="stat-num stat-circle" data-target="12">0</span>
           <span class="stat-label">Inbound calls<br>(from 0)</span>
