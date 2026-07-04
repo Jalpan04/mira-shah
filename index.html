@@ -329,7 +329,8 @@
 
   /* Count-up statistics strip */
   .stats-strip {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     background: #fdfaf2;
     border: 2px dashed rgba(42,38,34,0.3);
@@ -708,7 +709,7 @@
         <figcaption>the redesigned campaign, live on the streets</figcaption>
       </figure>
 
-      <div class="stats-strip" style="margin-bottom: 20px;">
+      <div class="stats-strip" style="width: 100%; max-width: 340px; margin-bottom: 20px;">
         <div class="stat-item">
           <span class="stat-num stat-circle" data-target="12">0</span>
           <span class="stat-label">Inbound calls<br>(from 0)</span>
