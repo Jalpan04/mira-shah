@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mira Shah — Portfolio</title>
+<meta name="description" content="Mira Shah — Portfolio. Business student at Ahmedabad University, blending tradition with ambition. Top academic performer, Bharatnatyam dancer, and marketing/BD intern.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mirashah.com/">
+<meta property="og:title" content="Mira Shah — Portfolio">
+<meta property="og:description" content="Business student at Ahmedabad University, blending tradition with ambition. Top academic performer, Bharatnatyam dancer, and marketing/BD intern.">
+<meta property="og:image" content="./images/img_2.jpeg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Mira Shah — Portfolio">
+<meta property="twitter:description" content="Business student at Ahmedabad University, blending tradition with ambition. Top academic performer, Bharatnatyam dancer, and marketing/BD intern.">
+<meta property="twitter:image" content="./images/img_2.jpeg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='80' font-family='Syncopate, sans-serif' font-weight='bold' fill='%23c0392b'%3EM%3C/text%3E%3C/svg%3E">
+
+<script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ead9;
+    --paper-light:#f8f2e4;
+    --ink:#2a2622;
+    --red:#af2b1e;
+    --red-dark:#8f2a1f;
+    --mustard:#dfa53c;
+    --olive:#7f8b5a;
+    --rust:#c1723f;
+    --pink:#dd9a95;
+    --card:#eadfc2;
+    --line:rgba(42,38,34,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    overflow-x:hidden;
+    position:relative;
+  }
+  /* paper grain overlay */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    z-index:9999;
+    opacity:0.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  .display{font-family:'Bricolage Grotesque', sans-serif; font-weight:800; letter-spacing:-0.02em;}
+  .hand{font-family:'Architects Daughter', cursive; font-weight:700;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:clamp(900px, 85vw, 1200px); margin:0 auto; padding:0 28px;}
+
+  /* ---------- scroll reveal ---------- */
+  .reveal{opacity:0; transform:translateY(28px) rotate(var(--rot,0deg)); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1; transform:translateY(0) rotate(var(--rot,0deg));}
+
+  /* Delay utility classes for staggered animations */
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  /* ---------- torn paper divider ---------- */
+  .torn{
+    width:100%; 
+    height:40px; 
+    display:block; 
+    position:absolute;
+    top:-1px;
+    left:0;
+    z-index:10;
+    pointer-events:none;
+  }
+  .torn svg {
+    width:100%;
+    height:100%;
+    display:block;
+  }
+
+  /* ---------- washi tape ---------- */
+  .tape{
+    position:absolute;
+    width:90px; height:30px;
+    opacity:0;
+    mix-blend-mode:multiply;
+    transform: scale(1.4) rotate(var(--rot, 0deg)) skewX(15deg);
+    transform-origin: top left;
+    filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.12));
+    z-index:12;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
+  }
+  .reveal.in .tape {
+    opacity: 0.7;
+    transform: scale(1) rotate(var(--rot, 0deg)) skewX(0deg);
+  }
+  .tape.mustard{
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E"),
+      repeating-linear-gradient(45deg, rgba(42,38,34,0.08), rgba(42,38,34,0.08) 6px, transparent 6px, transparent 12px), var(--mustard);
+  }
+  .tape.olive{
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E"),
+      repeating-linear-gradient(45deg, rgba(42,38,34,0.08), rgba(42,38,34,0.08) 6px, transparent 6px, transparent 12px), var(--olive);
+  }
+  .tape.pink{
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E"),
+      repeating-linear-gradient(45deg, rgba(42,38,34,0.08), rgba(42,38,34,0.08) 6px, transparent 6px, transparent 12px), var(--pink);
+  }
+  .tape.red{
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E"),
+      repeating-linear-gradient(45deg, rgba(42,38,34,0.08), rgba(42,38,34,0.08) 6px, transparent 6px, transparent 12px), var(--red);
+  }
+
+  /* ---------- polaroid ---------- */
+  .polaroid{
+    background:#fff;
+    padding:10px 10px 34px 10px;
+    box-shadow:0 10px 22px rgba(0,0,0,0.22);
+    display:inline-block;
+    transition:transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow .4s ease;
+    position:relative;
+    z-index:11;
+  }
+  .polaroid:hover{
+    transform: scale(1.05) rotate(calc(var(--rot, 0deg) * 1.3 - 2deg)) translateY(-8px) !important;
+    box-shadow: 0 22px 40px rgba(42, 38, 34, 0.3);
+    z-index: 20;
+  }
+  .polaroid img{width:100%; height:auto; display:block;}
+  .polaroid figcaption{
+    font-family:'Architects Daughter',cursive; font-weight:700; font-size:13px; text-align:center; margin-top:8px; color:#333;
+    line-height:1.2;
+  }
+
+  /* doodle svg */
+  .doodle{
+    position:absolute; 
+    z-index:4; 
+    opacity:0.85;
+    pointer-events:none;
+  }
+
+  /* ---------- BUTTON ---------- */
+  .click-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--mustard); color:var(--ink);
+    font-family:'Architects Daughter',cursive; font-weight:700; font-size:15px;
+    padding:10px 20px; border-radius:30px;
+    text-decoration:none; border:2px solid var(--ink);
+    box-shadow:3px 3px 0 var(--ink);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .click-btn:hover{ transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--ink); }
+  .click-btn:active{ transform:translate(1px,1px); box-shadow:1px 1px 0 var(--ink); }
+
+  .hero{
+    position:relative;
+    padding:70px 0 55px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.5), transparent 40%),
+      var(--paper-light);
+    overflow:hidden;
+    height: 655px;
+  }
+  .hero-right .polaroid.big {
+    transform: translateY(40px) rotate(3deg);
+  }
+  .hero .eyebrow{
+    font-family:'Architects Daughter',cursive; font-weight:700; letter-spacing:2px;
+    font-size:13px; color:var(--rust); text-align:right;
+  }
+  .hero h1.display{
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    text-transform: lowercase;
+    font-size:min(19vw,150px);
+    color:var(--red);
+    line-height:0.85;
+    margin:6px 0 0;
+    text-shadow:3px 3px 0 rgba(0,0,0,0.08);
+    letter-spacing:-0.03em;
+    position:relative;
+    display:inline-block;
+    transition: transform 0.1s ease-out;
+  }
+  .hero-photos{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-top:36px; gap:16px; flex-wrap:wrap;
+  }
+  .hero-photos .polaroid {
+    transition: transform 0.1s ease-out, box-shadow 0.4s ease;
+  }
+  .hero-photos .small{width:120px;}
+  .hero-photos .big{width:220px;}
+  .hero-name-bottom{
+    font-family:'Architects Daughter',cursive; font-weight:700; font-size:14px; letter-spacing:2px;
+    color:var(--rust); margin-top:18px;
+  }
+
+  /* ---------- SECTION TITLE ---------- */
+  .sec{padding:64px 0; position:relative;}
+  /* All direct .wrap children of .sec must be above the torn divider */
+  .sec > .wrap{
+    position:relative;
+    z-index:15;
+  }
+  /* Free-floating tapes placed directly inside .sec (not in .wrap) must also be above torn */
+  .sec > .tape{
+    z-index:15;
+  }
+  .sec-title{
+    font-size:clamp(38px,7vw,64px);
+    color:var(--ink);
+    margin:0 0 22px;
+    position:relative;
+    display:inline-block;
+  }
+  .sec-title.red{color:var(--red);}
+  .sec-title.mustard-text{color:var(--rust);}
+
+
+
+  /* lined paper bg */
+  .lined{
+    background-image: repeating-linear-gradient(var(--paper-light) 0px, var(--paper-light) 27px, var(--line) 28px);
+    background-color:var(--paper-light);
+  }
+  .kraft{ background:#e7dcc0; }
+  .plain{ background:var(--paper); }
+
+  /* ---------- WHO I AM ---------- */
+  .who-grid{ display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:center;}
+  .who-text{ font-size:15px; line-height:1.9; max-width:46ch; }
+  .who-photo-wrap{ display:flex; justify-content:center; }
+  /* Give the who section more vertical room */
+  #who.sec { padding: 90px 0; }
+
+  @media(max-width:720px){ .who-grid{grid-template-columns:1fr;} }
+
+  /* ---------- TILL NOW ---------- */
+  .till-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:34px; align-items:start;}
+  .till-list{list-style:none; margin:0; padding:0;}
+  .till-list li{
+    position:relative; padding-left:30px; margin-bottom:18px;
+    font-size:14.5px; line-height:1.75;
+  }
+  .till-list li::before{
+    content:"✦"; position:absolute; left:0; top:1px; color:var(--red); font-size:15px;
+  }
+  .teen-card{
+    background:#fff; border-radius:6px; padding:14px; box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    font-family:'Architects Daughter',cursive; position:relative; margin-top:18px;
+    transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .teen-card:hover{
+    transform: rotate(2deg) scale(1.02);
+  }
+  .teen-card .label{ font-size:11px; color:#c4302b; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom:6px;}
+  .teen-card p{ font-size:13px; line-height:1.5; margin:0 0 10px; color:#333; font-weight:400;}
+  @media(max-width:720px){ .till-grid{grid-template-columns:1fr;} }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:30px; align-items:center;}
+  .skills-card{
+    background:var(--card); border:2px dashed var(--ink); padding:34px 26px;
+    transform:rotate(-1deg);
+    position:relative;
+    margin-top:26px;
+    box-shadow: 2px 8px 18px rgba(0,0,0,0.06);
+  }
+  .skills-card ul{ list-style:none; margin:0; padding:0; font-family:'Architects Daughter',cursive; font-weight:700;}
+  .skills-card li{ font-size:15px; letter-spacing:0.5px; padding:8px 0; border-bottom:1px dashed rgba(0,0,0,0.2); text-transform:uppercase;}
+  .skills-card li:last-child{border-bottom:none;}
+  @media(max-width:720px){ .skills-grid{grid-template-columns:1fr;} }
+
+  /* ---------- PROJECT SECTIONS ---------- */
+  .project{ display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start; }
+  .project.reverse .p-text{order:2;}
+  .project.reverse .p-media{order:1;}
+  .p-text{ max-width:44ch; }
+  .p-text p{ font-size:14.5px; line-height:1.85; }
+  .p-media{ display:flex; justify-content:center; }
+  .p-media img{ border-radius:4px; box-shadow:0 14px 28px rgba(0,0,0,0.25); }
+  @media(max-width:720px){ .project, .project.reverse{grid-template-columns:1fr;} .project.reverse .p-text{order:1;} .project.reverse .p-media{order:2;} }
+
+  .notion-card{
+    background:#fff; border-radius:8px; padding:16px 18px; box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    max-width:340px; margin-top:20px;
+    transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .notion-card:hover{
+    transform: rotate(-1deg) scale(1.02);
+  }
+  .notion-card .n-title{ display:flex; align-items:center; gap:8px; font-weight:700; font-family:'Architects Daughter',cursive; font-size:15px; margin-bottom:6px;}
+  .notion-card .n-desc{ font-size:12.5px; color:#555; margin-bottom:4px; font-family:'Architects Daughter',cursive;}
+  .notion-card .n-sub{ font-size:11px; color:#999; font-family:'Architects Daughter',cursive;}
+
+  /* achievements */
+  .ach-box{
+    background:var(--red); color:#fff; padding:30px 28px; border-radius:6px;
+    box-shadow:0 12px 26px rgba(0,0,0,0.25); transform:rotate(1deg);
+    position:relative;
+    margin-top: 28px;
+  }
+  .ach-box .display{color:#fff; font-size:22px; margin:0 0 16px;}
+  .ach-box ol{ margin:0; padding-left:20px; font-family:'Architects Daughter',cursive; font-weight:700; font-size:14px; line-height:1.8;}
+
+  /* LOR + notion links row */
+  .links-row{ display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+  @media(max-width:720px){ .links-row{grid-template-columns:1fr;} }
+
+  /* Count-up statistics strip */
+  .stats-strip {
+    display: flex;
+    justify-content: space-around;
+    background: #fdfaf2;
+    border: 2px dashed rgba(42,38,34,0.3);
+    padding: 16px 10px;
+    margin-top: 24px;
+    transform: rotate(-1deg);
+    box-shadow: 2px 6px 15px rgba(0,0,0,0.04);
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 32px;
+    color: var(--red);
+    display: inline-block;
+  }
+  .stat-label {
+    display: block;
+    font-family:'Architects Daughter',cursive;
+    font-size: 13px;
+    color: var(--ink);
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer{
+    background:#211d19; color:#f2ead9; padding:64px 0 40px; position:relative;
+  }
+  .footer .thanks-text{ font-size:14px; line-height:1.85; max-width:44ch; color:#d8d0c0;}
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:40px;}
+  .connect-list{ list-style:none; margin:20px 0 0; padding:0; font-family:'Architects Daughter',cursive; font-weight:700; font-size:15px;}
+  .connect-list li{ margin-bottom:14px; display:flex; align-items:center; gap:10px;}
+  .connect-list a{ text-decoration:none; border-bottom:1px dashed rgba(242,234,217,0.5); padding-bottom:2px;}
+  .connect-list a:hover{ color:var(--mustard); }
+  .footer-bottom{ margin-top:50px; font-size:11px; color:#8a8375; text-align:center; font-family:'Architects Daughter',cursive;}
+  @media(max-width:720px){ .footer-grid{grid-template-columns:1fr;} }
+
+
+
+  ::selection{ background:var(--mustard); color:var(--ink); }
+
+  /* Accessibility settings */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .tape, .polaroid, .click-btn, .teen-card, .notion-card {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+
+
+    .hero h1.display {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+
+  /* Navigation header */
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed rgba(42,38,34,0.15);
+    margin-bottom: 40px;
+    font-family: 'Space Mono', monospace;
+  }
+  .hero-nav .nav-logo {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .hero-nav .nav-links {
+    display: flex;
+    gap: 24px;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .hero-nav a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero-nav a:hover {
+    color: var(--red);
+  }
+
+  /* Hero grid split layout */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 48px;
+    align-items: center;
+    text-align: left;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-left .eyebrow {
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .hero-left h1.display {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 8vw, 96px);
+    color: var(--red);
+    line-height: 0.9;
+    margin: 0 0 16px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+    letter-spacing: -0.03em;
+  }
+  .hero-left .subtitle {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3.5vw, 32px);
+    color: var(--rust);
+    line-height: 1.25;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+  }
+  .hero-left p {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 44ch;
+    margin: 0 0 32px;
+  }
+  .hero-left .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: auto;
+    }
+    .hero-right .polaroid.big {
+      transform: rotate(3deg) !important;
+    }
+    .hero-nav {
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 16px;
+      margin-bottom: 30px;
+    }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      text-align: center;
+    }
+    .hero-left {
+      align-items: center;
+    }
+    .hero-left p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-left .hero-actions {
+      justify-content: center;
+    }
+  }
+
+  /* Overlapping scrapbook collage in Who I Am section */
+  .who-photos-collage {
+    position: relative;
+    width: 460px;
+    height: 520px;
+    margin: 0 auto;
+  }
+  .who-photos-collage .polaroid {
+    position: absolute;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  }
+
+  .who-photos-collage .polaroid.lake-photo {
+    width: 185px;
+    left: 30px;
+    top: 5px;
+    --rot: -9deg;
+    transform: rotate(-9deg);
+    z-index: 2;
+  }
+  .who-photos-collage .polaroid.shelf-photo {
+    width: 210px;
+    left: 200px;
+    top: 0;
+    --rot: 5deg;
+    transform: rotate(5deg);
+    z-index: 3;
+  }
+  .who-photos-collage .polaroid.close-photo {
+    width: 165px;
+    left: 25px;
+    top: 210px;
+    --rot: -3deg;
+    transform: rotate(-3deg);
+    z-index: 4;
+  }
+  @media (max-width: 720px) {
+    .who-photos-collage {
+      width: 300px;
+      height: 420px;
+      margin-top: 40px;
+    }
+
+    .who-photos-collage .polaroid.lake-photo  { width: 140px; left: 0;   top: 10px; }
+    .who-photos-collage .polaroid.shelf-photo { width: 165px; left: 115px; top: 0;  }
+    .who-photos-collage .polaroid.close-photo { width: 130px; left: 30px; top: 195px; }
+  }
+</style>
+</head>
+<body>
+
+
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <!-- Top Navigation Header -->
+    <nav class="hero-nav reveal in">
+      <div class="nav-logo">Portfolio</div>
+      <div class="nav-links">
+        <a href="#who">About</a>
+        <a href="#internship">Work</a>
+        <a href="#testimonial">Testimonial</a>
+        <a href="#testimonial" style="border-bottom: 1px dashed var(--ink);">Contact</a>
+      </div>
+    </nav>
+    
+    <!-- Hero Two-Column Grid Split -->
+    <div class="hero-grid">
+      <!-- Left Column: Value Prop & CTA -->
+      <div class="hero-left reveal in">
+        <h1 class="display">Mira Shah.</h1>
+        <h2 class="subtitle">A Business Student &amp; Social Impact Enthusiast</h2>
+        <p>Blending analytical strategy with creative execution. I design marketing campaigns, coordinate sales blueprints, and conduct field studies that bridge business goals with community value.</p>
+        <div class="hero-actions">
+          <a href="#internship" class="click-btn">View My Work ✦</a>
+          <a href="./assets/Mira_Shah_Resume.pdf" class="click-btn" style="background: transparent;" download>Download Resume</a>
+        </div>
+      </div>
+      
+      <!-- Right Column: Single Hero Polaroid Image -->
+      <div class="hero-right reveal reveal-delay-1 in" style="--rot:3deg;">
+        <figure class="polaroid big" style="width: 100%; max-width: 320px;">
+          <div class="tape mustard" style="top: -15px; left: 10px; --rot: -8deg; transform: rotate(-8deg);"></div>
+          <div class="tape red" style="bottom: -15px; right: 10px; --rot: 6deg; transform: rotate(6deg);"></div>
+          <img src="./images/img_2.jpeg" alt="Mira Shah portrait">
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WHO I AM ============ -->
+<section class="sec lined" id="who" style="position:relative;">
+  <div class="torn" style="background: var(--paper-light); ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--paper-light);">
+      <path d="M0,0 L35,18 L70,3 L105,22 L140,8 L175,25 L210,12 L245,28 L280,7 L315,22 L350,4 L385,26 L420,10 L455,24 L490,6 L525,29 L560,12 L595,25 L630,9 L665,22 L700,5 L735,28 L770,11 L805,24 L840,8 L875,27 L910,13 L945,26 L980,8 L1015,22 L1050,4 L1085,28 L1120,10 L1155,24 L1190,6 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="wrap who-grid">
+    <div class="who-photo-wrap reveal" style="--rot:0deg;">
+      <div class="who-photos-collage">
+        <!-- Photo 1: Lake (img_1) -- moved left -->
+        <figure class="polaroid lake-photo">
+          <div class="tape mustard" style="top: -15px; left: 5px; --rot: -12deg; transform: rotate(-12deg); width: 60px;"></div>
+          <img src="./images/img_1.jpeg" alt="Mira by the lake">
+        </figure>
+        <!-- Photo 2: Shelf (img_4) -- caption removed -->
+        <figure class="polaroid shelf-photo">
+          <div class="tape olive" style="top: -12px; right: 10px; --rot: 8deg; transform: rotate(8deg); width: 70px;"></div>
+          <img src="./images/img_4.jpeg" alt="Mira at the shelf">
+        </figure>
+        <!-- Photo 3: Close up (img_3) -- moved left and up -->
+        <figure class="polaroid close-photo">
+          <div class="tape red" style="bottom: -15px; left: 10px; --rot: -6deg; transform: rotate(-6deg); width: 60px;"></div>
+          <img src="./images/img_3.jpeg" alt="Mira close up">
+        </figure>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <h2 class="sec-title display">
+        Who I Am
+      </h2>
+      <p class="who-text">Born into a legacy of innovation, I'm a business student at Ahmedabad University, blending tradition with ambition. A lifelong topper, trained Bharatnatyam dancer, and social impact enthusiast — I bring discipline, creativity, and heart to everything I do. Let's build something meaningful together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TILL NOW ============ -->
+<section class="sec kraft" id="till-now" style="position:relative;">
+  <div class="torn" style="background: var(--paper-light); ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: #e7dcc0;">
+      <path d="M0,0 L20,15 L50,5 L80,25 L110,8 L140,20 L170,4 L200,18 L230,10 L260,22 L290,6 L320,16 L350,8 L380,20 L410,4 L440,18 L470,10 L500,24 L530,6 L560,15 L590,8 L620,20 L650,4 L680,18 L710,10 L740,22 L770,6 L800,16 L830,8 L860,20 L890,4 L920,18 L950,10 L980,24 L1010,6 L1040,15 L1070,8 L1100,20 L1130,4 L1160,18 L1190,10 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="tape mustard" style="top:25px; left:8%; transform:rotate(-8deg);"></div>
+  <div class="wrap till-grid">
+    <div class="reveal">
+      <h2 class="sec-title display red">
+        Till Now...
+        
+      </h2>
+      <ul class="till-list">
+        <li>Olympiad gold and silver medalist, recognized for sharp analytical and logical reasoning skills.</li>
+        <li>TiE alumna, trained in entrepreneurship, startup strategy, and business fundamentals.</li>
+        <li>Built a YouTube channel! @13 with 5K+ viewers and 115 hours of streamed content — learning communication, editing, and digital outreach.</li>
+        <li>Competed for Debate at national-level competitions, including IIT Bombay, known for confident and impactful communication.</li>
+        <li>Organized donation drives and wellness sessions to support under-served communities and promote mental well-being with Art of Living.</li>
+      </ul>
+    </div>
+    <div class="reveal reveal-delay-1" style="--rot:3deg;">
+      <figure class="polaroid" style="width:100%; max-width:260px; transform:rotate(3deg); margin:0 auto; display:block;">
+        <div class="tape mustard" style="top: -12px; left: 10px; --rot: -6deg; transform: rotate(-6deg);"></div>
+        <img src="./images/img_5.jpeg" alt="Mira speaking at Teen Talk">
+        <figcaption>on stage, 13 years old</figcaption>
+      </figure>
+      <div class="teen-card">
+        <div class="tape pink" style="bottom: -15px; right: 10px; --rot: 4deg; transform: rotate(4deg);"></div>
+        
+
+
+        <div class="label"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>Teen Talk · YouTube</div>
+        <p>Sometimes it's true! Maturity does not need a certain age number... Here, Mira Shah, 13, shares eye-opening experiences and very few practical tips to put into action.</p>
+        <a class="click-btn" href="https://www.youtube.com/@TeenTalk" target="_blank" rel="noopener">Click here ✦</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSONAL SKILLS ============ -->
+<section class="sec plain" id="skills" style="position:relative;">
+  <div class="torn" style="background: #e7dcc0; ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--paper);">
+      <path d="M0,0 L40,10 L75,22 L110,5 L145,18 L180,8 L215,25 L250,12 L285,20 L320,6 L355,16 L390,9 L425,22 L460,5 L495,18 L530,8 L565,25 L600,12 L635,20 L670,6 L705,16 L740,9 L775,22 L810,5 L845,18 L880,8 L915,25 L950,12 L985,20 L1020,6 L1055,16 L1090,9 L1125,22 L1160,5 L1190,18 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="wrap skills-grid">
+    <div class="reveal reveal-delay-1" style="--rot:-2deg;">
+      <figure class="polaroid" style="width:100%; max-width:260px; transform:rotate(-2deg);">
+        <img src="./images/img_6.jpeg" alt="Mira portrait">
+      </figure>
+    </div>
+    <div class="reveal">
+      <h2 class="sec-title display">
+        Personal Skills
+        
+      </h2>
+      <div class="skills-card">
+        <div class="tape red" style="top: -15px; left: -15px; --rot: -6deg; transform: rotate(-6deg);"></div>
+        <ul>
+          <li>Communication &amp; Sales</li>
+          <li>Operational Analysis</li>
+          <li>Market Research</li>
+          <li>Business Development</li>
+          <li>Brand Strategy</li>
+          <li>Content Marketing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERNSHIP PROJECTS INTRO ============ -->
+<section class="sec lined" id="internship" style="position:relative;">
+  <div class="torn" style="background: var(--paper); ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--paper-light);">
+      <path d="M0,0 L35,18 L70,3 L105,22 L140,8 L175,25 L210,12 L245,28 L280,7 L315,22 L350,4 L385,26 L420,10 L455,24 L490,6 L525,29 L560,12 L595,25 L630,9 L665,22 L700,5 L735,28 L770,11 L805,24 L840,8 L875,27 L910,13 L945,26 L980,8 L1015,22 L1050,4 L1085,28 L1120,10 L1155,24 L1190,6 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="tape olive" style="top:14px; right:10%; transform:rotate(9deg);"></div>
+  <div class="wrap project">
+    <div class="p-text reveal">
+      <h2 class="sec-title display red" style="font-size:clamp(30px,6vw,52px);">
+        The Internship<br>Projects
+        
+      </h2>
+      <p>My first internship was at Nutrirasoi Foods Pvt. Ltd. Under which, I helped build their brand 'Vyndo' — a healthy millet-based snack startup. I first joined as a marketing intern, then for a month as a sales intern, and finally concluded my third month as a business development intern.</p>
+    </div>
+    <div class="p-media reveal reveal-delay-1" style="--rot:2deg;">
+      <figure class="polaroid" style="width:280px; transform:rotate(2deg);">
+        <div class="tape olive" style="top: -12px; right: 10px; --rot: 8deg; transform: rotate(8deg);"></div>
+        <img src="./images/img_7.jpeg" alt="Institutional Sales Visit, Nirma University">
+        <figcaption>Institutional Sales Visit,<br>Nirma University</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROJECT ============ -->
+<section class="sec kraft" id="project1" style="position:relative;">
+  <div class="torn" style="background: var(--paper-light); ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: #e7dcc0;">
+      <path d="M0,0 L20,15 L50,5 L80,25 L110,8 L140,20 L170,4 L200,18 L230,10 L260,22 L290,6 L320,16 L350,8 L380,20 L410,4 L440,18 L470,10 L500,24 L530,6 L560,15 L590,8 L620,20 L650,4 L680,18 L710,10 L740,22 L770,6 L800,16 L830,8 L860,20 L890,4 L920,18 L950,10 L980,24 L1010,6 L1040,15 L1070,8 L1100,20 L1130,4 L1160,18 L1190,10 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="wrap project reverse">
+    <div class="p-text reveal">
+      <h3 class="sec-title display mustard-text" style="font-size:clamp(30px,6vw,50px);">
+        First Project
+      </h3>
+      <p>My first project was redesigning the rickshaw marketing campaign — something that didn't work the first time. Looking at the old posters, one thing kept bothering me: we were loudly promoting "₹10 snacks." I had a feeling that might actually hurt the perception of a healthy snack.</p>
+      <p>So I went down a small rabbit hole — consumer surveys, research on food marketing and consumer behavior, two online food-branding courses — trying to understand how people actually judge quality when buying snacks. That exploration led us to tweak the price point and shift the focus away from price and toward the product's value.</p>
+      <p>The outcome was small but special to me: the campaign went from <strong>0 calls to 12 calls</strong>. Small, but my first real win.</p>
+      <p>To know more about it, and read my whole research — click the link for The 10rs. Dilemma below.</p>
+    </div>
+    <div class="p-media reveal reveal-delay-1" style="--rot:0deg; display: flex; flex-direction: column; align-items: center;">
+      <figure class="polaroid" style="width:280px; transform:rotate(-3deg); margin-bottom: 24px;">
+        <div class="tape mustard" style="top: -10px; right: 15px; --rot: -6deg; transform: rotate(-6deg);"></div>
+        <img src="./images/img_8.jpeg" alt="Redesigned rickshaw campaign">
+        <figcaption>the redesigned campaign, live on the streets</figcaption>
+      </figure>
+
+      <div class="stats-strip" style="width: 100%; max-width: 340px; margin-bottom: 20px;">
+        <div class="stat-item">
+          <span class="stat-num stat-circle" data-target="12">0</span>
+          <span class="stat-label">Inbound calls<br>(from 0)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="50000">0</span><span class="stat-num" style="color:var(--red);">+</span>
+          <span class="stat-label">Social media<br>impressions</span>
+        </div>
+      </div>
+
+      <div class="notion-card" style="margin-top: 0; width: 100%; max-width: 340px;">
+        <div class="n-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px; margin-bottom: 2px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>The 10rs. Dilemma</div>
+        <div class="n-desc">During my internship at NutriRasoi Foods Pvt. Ltd, one of my first projects involved working on the marketing communication for the Vyndo snack brand.</div>
+        <div class="n-sub">Mira Shah's Notion · made with Notion</div>
+        <a class="click-btn" style="margin-top:10px;" href="https://app.notion.com/p/The-10rs-Dilemma-22e3cbb150ba804cb450e770a370d1e3?source=copy_link" target="_blank" rel="noopener">Click here ✦</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECOND PROJECT ============ -->
+<section class="sec plain" id="project2" style="position:relative;">
+  <div class="torn" style="background: #e7dcc0; ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--paper);">
+      <path d="M0,0 L40,10 L75,22 L110,5 L145,18 L180,8 L215,25 L250,12 L285,20 L320,6 L355,16 L390,9 L425,22 L460,5 L495,18 L530,8 L565,25 L600,12 L635,20 L670,6 L705,16 L740,9 L775,22 L810,5 L845,18 L880,8 L915,25 L950,12 L985,20 L1020,6 L1055,16 L1090,9 L1125,22 L1160,5 L1190,18 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="tape pink" style="top:15px; left:6%; transform:rotate(-10deg);"></div>
+  <div class="wrap project">
+    <div class="p-text reveal">
+      <h3 class="sec-title display">
+        Second Project
+        
+      </h3>
+      <p>During my time on the sales team, my second project was designing the blueprint for Vyndo hampers we were planning to launch. From creating presentations and promotional posters to deciding the product mix inside the hampers, I worked on shaping the entire concept — and eventually closed our first hampers client: the full chain of Healthy Hustle gyms across Ahmedabad.</p>
+    </div>
+    <div class="p-media reveal reveal-delay-1" style="--rot:2deg;">
+      <figure class="polaroid" style="width:100%; max-width:340px; transform:rotate(2deg);">
+        <div class="tape pink" style="top: -15px; left: 10px; --rot: -9deg; transform: rotate(-9deg);"></div>
+        <div class="tape red" style="bottom: -15px; right: 10px; --rot: 5deg; transform: rotate(5deg);"></div>
+        <img src="./images/img_9.jpeg" alt="Vyndo x Healthy Hustle hamper concept">
+        <figcaption>hamper blueprint &amp; client close</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THIRD PROJECT + ACHIEVEMENTS ============ -->
+<section class="sec lined" id="project3" style="position:relative;">
+  <div class="torn" style="background: var(--paper); ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--paper-light);">
+      <path d="M0,0 L35,18 L70,3 L105,22 L140,8 L175,25 L210,12 L245,28 L280,7 L315,22 L350,4 L385,26 L420,10 L455,24 L490,6 L525,29 L560,12 L595,25 L630,9 L665,22 L700,5 L735,28 L770,11 L805,24 L840,8 L875,27 L910,13 L945,26 L980,8 L1015,22 L1050,4 L1085,28 L1120,10 L1155,24 L1190,6 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="wrap project">
+    <div class="reveal reveal-delay-1" style="--rot:1deg;">
+      <div class="ach-box">
+        <div class="tape olive" style="top: -15px; right: 15px; --rot: -5deg; transform: rotate(-5deg);"></div>
+        <h4 class="display">Other Notable Achievements</h4>
+        <ol>
+          <li>Worked extensively on Vyndo's social media communication across LinkedIn, Instagram, Pinterest, and Facebook.</li>
+          <li>Brainstormed, shot, curated, and wrote content tailored for different platforms and audiences.</li>
+          <li>Developed brand taglines and packaging messaging aligned with Vyndo's positioning as a healthy snack brand.</li>
+          <li>Contributed to building the brand's digital presence, collectively generating 50K+ impressions across social platforms.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="p-text reveal">
+      <h3 class="sec-title display red" style="font-size:clamp(30px,6vw,50px);">
+        Third Project
+      </h3>
+      <p>One project that particularly changed the way I look at consumer brands was conducting a 40-store field study across Ahmedabad to understand how Vyndo actually existed inside real shops. I visited stores to observe everything from shelf placement and packaging condition to how distributors introduced the product to customers. The study eventually led to improvements in packaging durability, expiry labeling, Gujarati-language promotions, and clearer overall brand positioning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="sec kraft" id="testimonial" style="position:relative;">
+  <div class="torn" style="background: var(--paper-light); ">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: #e7dcc0;">
+      <path d="M0,0 L20,15 L50,5 L80,25 L110,8 L140,20 L170,4 L200,18 L230,10 L260,22 L290,6 L320,16 L350,8 L380,20 L410,4 L440,18 L470,10 L500,24 L530,6 L560,15 L590,8 L620,20 L650,4 L680,18 L710,10 L740,22 L770,6 L800,16 L830,8 L860,20 L890,4 L920,18 L950,10 L980,24 L1010,6 L1040,15 L1070,8 L1100,20 L1130,4 L1160,18 L1190,10 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="tape olive" style="top:20px; right:15%; transform:rotate(4deg);"></div>
+  <div class="wrap links-row">
+    <!-- Testimonial pull quote card -->
+    <div class="reveal" style="--rot:-2deg;">
+      <div class="polaroid" style="width:100%; transform:rotate(-2deg); background:#fffef0; padding:24px 20px; font-family:'Architects Daughter',cursive; border: 1px solid rgba(0,0,0,0.05); text-align: left;">
+        <span style="font-size:20px; color:var(--red); line-height:1.3; display:block; margin-bottom:12px; font-weight:700;">"Mira doesn't just execute; she explores. Whether it was going down a research rabbit hole to turn a failed campaign into a win... her drive and analytical depth are exceptional."</span>
+        <span style="font-size:14px; color:#555; text-align:right; display:block; font-weight:700;">— Founder, NutriRasoi Foods</span>
+      </div>
+    </div>
+
+    <!-- Notion LOR card -->
+    <div class="reveal reveal-delay-1" style="--rot:2deg;">
+      <h3 class="display" style="font-size:clamp(30px,6vw,46px); margin-bottom:14px; text-align:center; display:block; color:var(--ink); position:relative;">
+        Testimonial<br><span style="font-size:0.55em; color:var(--rust);">From the Founder</span>
+      </h3>
+      <div class="notion-card" style="transform:rotate(1deg); max-width:none; margin-top:0;">
+        <div class="tape mustard" style="top: -15px; left: 10px; --rot: -4deg; transform: rotate(-4deg);"></div>
+        
+
+
+        <div class="n-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px; margin-bottom: 2px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Letter of Recommendation</div>
+        <div class="n-desc">Hosted by Notion Sites — the easiest way to get a website using Notion.</div>
+        <div class="n-sub">Mira Shah's Notion on Notion</div>
+        <a class="click-btn" style="margin-top:10px;" href="https://app.notion.com/p/Letter-Of-Recommendation-3733cbb150ba805da2fbe73e4777cfa7?source=copy_link" target="_blank" rel="noopener">Click here ✦</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER: THANK YOU + CONNECT ============ -->
+<footer class="footer" style="position:relative;">
+  <div class="torn" style="background: #e7dcc0;">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: #211d19;">
+      <path d="M0,0 L40,10 L75,22 L110,5 L145,18 L180,8 L215,25 L250,12 L285,20 L320,6 L355,16 L390,9 L425,22 L460,5 L495,18 L530,8 L565,25 L600,12 L635,20 L670,6 L705,16 L740,9 L775,22 L810,5 L845,18 L880,8 L915,25 L950,12 L985,20 L1020,6 L1055,16 L1090,9 L1125,22 L1160,5 L1190,18 L1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+  <div class="wrap footer-grid">
+    <div class="reveal">
+      <h2 class="display" style="color:var(--red); font-size:clamp(34px,6vw,56px); margin:0 0 18px;">Thank You...</h2>
+      <p class="thanks-text">So that's the end. Thank you for sticking around. Everything I do, I do it to learn something new — and there won't be a happier person than me if you give me something that is totally out of my comfort zone and skill-set. So if you're a founder, a passionate builder, someone who loves their work more than life — we'll get along just fine.</p>
+    </div>
+    <div class="reveal" style="--rot:-1deg;">
+      <h2 class="display" style="color:var(--mustard); font-size:clamp(30px,5vw,46px); margin:0 0 6px;">Let's Connect</h2>
+      <ul class="connect-list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:+919726944476">+91 97269 44476</a>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          <a href="https://www.linkedin.com/in/mira-shah-11b5443a5/" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:mirashah432007@gmail.com">mirashah432007@gmail.com</a>
+        </li>
+        <li style="color:#d8d0c0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Ahmedabad
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+  // Check for reduced motion settings
+  const animateOption = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Initialize Rough Notation annotations
+  document.querySelectorAll('.sec-title').forEach(heading => {
+    let color = 'var(--red)';
+    if (heading.classList.contains('mustard-text')) {
+      color = 'var(--rust)';
+    } else if (heading.classList.contains('red')) {
+      color = 'var(--red)';
+    }
+    heading.roughAnnotation = RoughNotation.annotate(heading, {
+      type: 'underline',
+      color: color,
+      strokeWidth: 3,
+      padding: [2, 5],
+      iterations: 2,
+      animate: animateOption
+    });
+  });
+
+  const statCircle = document.querySelector('.stat-circle');
+  if (statCircle) {
+    statCircle.roughAnnotation = RoughNotation.annotate(statCircle, {
+      type: 'circle',
+      color: 'var(--red)',
+      strokeWidth: 2.5,
+      padding: 8,
+      iterations: 2,
+      animate: false
+    });
+  }
+
+  // Intersection Observer for scroll reveal animations
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ 
+        e.target.classList.add('in'); 
+        
+        // Show rough-notation for target or children
+        if (e.target.roughAnnotation) {
+          e.target.roughAnnotation.show();
+        }
+        e.target.querySelectorAll('.sec-title, .stat-circle').forEach(child => {
+          if (child.roughAnnotation) {
+            setTimeout(() => {
+              child.roughAnnotation.show();
+            }, 300); // delay to align with slide-in
+          }
+        });
+        
+        // Stat counters trigger
+        if (e.target.classList.contains('stats-strip') && !e.target.classList.contains('animated')) {
+          e.target.classList.add('animated');
+          e.target.querySelectorAll('.stat-num').forEach(numEl => {
+            animateStats(numEl);
+          });
+        }
+      }
+    });
+  }, {threshold:0.15});
+
+  document.querySelectorAll('.reveal, .stats-strip, .sec-title, .stat-circle').forEach(el=>{
+    if (!el.classList.contains('sec-title') && !el.classList.contains('stat-circle')) {
+      el.classList.remove('in');
+    }
+    io.observe(el);
+  });
+
+  // Stat counter animation function
+  function animateStats(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    if (isNaN(target)) return;
+    const duration = 1800; // ms
+    const startTime = performance.now();
+    
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Ease out quad
+      const easeProgress = progress * (2 - progress);
+      const current = Math.floor(easeProgress * target);
+      
+      if (target >= 1000) {
+        el.textContent = Math.floor(current / 1000) + 'K';
+      } else {
+        el.textContent = current;
+      }
+      
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target >= 1000 ? (target / 1000) + 'K' : target;
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Force manual scroll restoration to prevent jumping to the bottom on reload
+  if (window.history.scrollRestoration) {
+    window.history.scrollRestoration = 'manual';
+  }
+
+  // Scroll events: Progress bar and Hero Parallax
+  function updateScrollProgress() {
+    const scrolled = window.scrollY;
+    
+
+
+    // Hero Polaroid Parallax (targets the single polaroid on the right)
+    const heroPhoto = document.querySelector('.hero-right .polaroid');
+    if (heroPhoto) {
+      const rot = heroPhoto.style.getPropertyValue('--rot') || '3deg';
+      heroPhoto.style.transform = `translateY(${scrolled * 0.1}px) rotate(${rot})`;
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollProgress);
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    updateScrollProgress();
+  });
+
+  // Trailing cursor doodle for desktop (fine pointers)
+  if (window.matchMedia('(pointer: fine)').matches) {
+    const doodleCursor = document.createElement('div');
+    const dotHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="6" fill="var(--red)" opacity="0.6"/>
+    </svg>`;
+    const heartHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="var(--red)" opacity="0.6"/>
+    </svg>`;
+
+    doodleCursor.innerHTML = dotHTML;
+    doodleCursor.style.position = 'fixed';
+    doodleCursor.style.pointerEvents = 'none';
+    doodleCursor.style.zIndex = '10000';
+    doodleCursor.style.transform = 'translate(-50%, -50%)';
+    doodleCursor.style.transition = 'transform 0.08s ease-out';
+    document.body.appendChild(doodleCursor);
+
+    let mouseX = 0, mouseY = 0;
+    let posX = 0, posY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    window.addEventListener('mousedown', () => {
+      doodleCursor.innerHTML = heartHTML;
+    });
+
+    window.addEventListener('mouseup', () => {
+      doodleCursor.innerHTML = dotHTML;
+    });
+
+    function tick() {
+      posX += (mouseX - posX) * 0.12;
+      posY += (mouseY - posY) * 0.12;
+      doodleCursor.style.left = posX + 'px';
+      doodleCursor.style.top = posY + 'px';
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+</script>
+
+</body>
+</html>
