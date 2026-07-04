@@ -505,52 +505,10 @@
     }
   }
 
-  /* Overlapping scrapbook collage in Who I Am section */
-  .who-photos-collage {
-    position: relative;
-    width: 460px;
-    height: 520px;
-    margin: 0 auto;
-  }
-  .who-photos-collage .polaroid {
-    position: absolute;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-  }
-
-  .who-photos-collage .polaroid.lake-photo {
-    width: 185px;
-    left: 30px;
-    top: 5px;
-    --rot: -9deg;
-    transform: rotate(-9deg);
-    z-index: 2;
-  }
-  .who-photos-collage .polaroid.shelf-photo {
-    width: 210px;
-    left: 200px;
-    top: 0;
+  /* Single scrapbook polaroid in Who I Am section */
+  .who-photo-wrap .polaroid {
     --rot: 5deg;
     transform: rotate(5deg);
-    z-index: 3;
-  }
-  .who-photos-collage .polaroid.close-photo {
-    width: 165px;
-    left: 25px;
-    top: 210px;
-    --rot: -3deg;
-    transform: rotate(-3deg);
-    z-index: 4;
-  }
-  @media (max-width: 720px) {
-    .who-photos-collage {
-      width: 300px;
-      height: 420px;
-      margin-top: 40px;
-    }
-
-    .who-photos-collage .polaroid.lake-photo  { width: 140px; left: 0;   top: 10px; }
-    .who-photos-collage .polaroid.shelf-photo { width: 165px; left: 115px; top: 0;  }
-    .who-photos-collage .polaroid.close-photo { width: 130px; left: 30px; top: 195px; }
   }
 </style>
 </head>
@@ -605,24 +563,11 @@
     </svg>
   </div>
   <div class="wrap who-grid">
-    <div class="who-photo-wrap reveal" style="--rot:0deg;">
-      <div class="who-photos-collage">
-        <!-- Photo 1: Lake (img_1) -- moved left -->
-        <figure class="polaroid lake-photo">
-          <div class="tape mustard" style="top: -15px; left: 5px; --rot: -12deg; transform: rotate(-12deg); width: 60px;"></div>
-          <img src="./images/img_1.jpeg" alt="Mira by the lake">
-        </figure>
-        <!-- Photo 2: Shelf (img_4) -- caption removed -->
-        <figure class="polaroid shelf-photo">
-          <div class="tape olive" style="top: -12px; right: 10px; --rot: 8deg; transform: rotate(8deg); width: 70px;"></div>
-          <img src="./images/img_4.jpeg" alt="Mira at the shelf">
-        </figure>
-        <!-- Photo 3: Close up (img_3) -- moved left and up -->
-        <figure class="polaroid close-photo">
-          <div class="tape red" style="bottom: -15px; left: 10px; --rot: -6deg; transform: rotate(-6deg); width: 60px;"></div>
-          <img src="./images/img_3.jpeg" alt="Mira close up">
-        </figure>
-      </div>
+    <div class="who-photo-wrap reveal" style="--rot:5deg;">
+      <figure class="polaroid shelf-photo" style="width: 100%; max-width: 320px; position: relative;">
+        <div class="tape olive" style="top: -15px; right: 10px; --rot: 8deg; transform: rotate(8deg); width: 70px;"></div>
+        <img src="./images/img_4.jpeg" alt="Mira at the shelf">
+      </figure>
     </div>
     <div class="reveal reveal-delay-1">
       <h2 class="sec-title display">
