@@ -342,25 +342,27 @@
   .stat-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    text-align: left;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8px;
   }
   .stat-num {
     font-family: 'Permanent Marker', cursive;
-    font-size: 32px;
+    font-size: 38px;
     color: var(--red);
     display: inline-block;
   }
   .stat-circle {
-    padding: 2px 6px;
-    margin-right: 4px;
+    padding: 0 4px;
+    margin-right: 0;
   }
   .stat-label {
     display: inline-block;
     font-family:'Architects Daughter',cursive;
-    font-size: 13px;
+    font-size: 15px;
     color: var(--ink);
     line-height: 1.2;
+    text-align: right;
   }
 
   /* ---------- FOOTER ---------- */
@@ -894,7 +896,7 @@
       type: 'circle',
       color: 'var(--red)',
       strokeWidth: 2.5,
-      padding: 8,
+      padding: 4,
       iterations: 2,
       animate: false
     });
