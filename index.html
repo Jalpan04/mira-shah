@@ -330,16 +330,19 @@
   /* Count-up statistics strip */
   .stats-strip {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background: #fdfaf2;
     border: 2px dashed rgba(42,38,34,0.3);
-    padding: 16px 10px;
+    padding: 16px 20px;
     margin-top: 24px;
     transform: rotate(-1deg);
     box-shadow: 2px 6px 15px rgba(0,0,0,0.04);
   }
   .stat-item {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
   }
   .stat-num {
     font-family: 'Permanent Marker', cursive;
@@ -348,11 +351,10 @@
     display: inline-block;
   }
   .stat-label {
-    display: block;
+    display: inline-block;
     font-family:'Architects Daughter',cursive;
     font-size: 13px;
     color: var(--ink);
-    margin-top: 4px;
     line-height: 1.2;
   }
 
@@ -706,10 +708,6 @@
         <div class="stat-item">
           <span class="stat-num stat-circle" data-target="12">0</span>
           <span class="stat-label">Inbound calls<br>(from 0)</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="50000">0</span><span class="stat-num" style="color:var(--red);">+</span>
-          <span class="stat-label">Social media<br>impressions</span>
         </div>
       </div>
 
